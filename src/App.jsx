@@ -1,8 +1,14 @@
 import allCountryScores from "../data/scores.jsx";
 
+function sortScores(scores) {
+  return scores.sort((a, b) => b.s - a.s);
+}
+
 function RenderScores(country) {
-  return country.scores.map((score) => (
+  const sortedScores = sortScores(country.scores);
+  return sortedScores.map((score) => (
     <li key={crypto.randomUUID()}>
+      {" "}
       {score.n} {score.s}
     </li>
   ));
