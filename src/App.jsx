@@ -5,6 +5,10 @@ function sortScores(scores) {
   return scores.sort((a, b) => b.s - a.s);
 }
 
+function sortCountryScoresByName(countries) {
+  return countries.sort((a, b) => a.name.localeCompare(b.name));
+}
+
 function RenderScores(country) {
   const sortedScores = sortScores(country.scores);
   return sortedScores.map((score) => (
@@ -16,7 +20,8 @@ function RenderScores(country) {
 }
 
 function RenderScoresPerCountry(allCountryScores) {
-  return allCountryScores.map((country) => {
+  const sortedCountriesByName = sortCountryScoresByName(allCountryScores);
+  return sortedCountriesByName.map((country) => {
     return (
       <>
         <div className="scores-container">
@@ -32,7 +37,7 @@ function App() {
   return (
     <>
       <h1>High Scores per country</h1>
-      <div>{RenderScoresPerCountry(allCountryScores)}</div>
+      <div>{RenderScoresPerCountry(allCountryScores.sort())}</div>
     </>
   );
 }
