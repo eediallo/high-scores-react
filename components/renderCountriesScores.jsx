@@ -25,7 +25,9 @@ function HighScoreTable(allCountryScores) {
   return sortedCountriesByName.map((country) => {
     return (
       <div className="scores-container" key={country.id}>
-        <h2>High Scrores: {country.name}</h2>
+        <h2>
+          High Scrores: <span className="country">{country.name}</span>
+        </h2>
         <table className="score-table">{PlayersScore(country)}</table>
       </div>
     );
