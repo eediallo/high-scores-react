@@ -9,7 +9,7 @@ function sortCountryScoresByName(countries) {
 function PlayersScore(country) {
   const sortedScores = sortScores(country.scores);
   return sortedScores.map((score) => (
-    <tbody className="score-table" key={score.id}>
+    <tbody key={score.id}>
       <tr className="score">
         <td>{score.n}</td>
         <td>
@@ -26,7 +26,7 @@ function HighScoreTable(allCountryScores) {
     return (
       <div className="scores-container" key={country.id}>
         <h2>High Scrores: {country.name}</h2>
-        <table>{PlayersScore(country)}</table>
+        <table className="score-table">{PlayersScore(country)}</table>
       </div>
     );
   });
