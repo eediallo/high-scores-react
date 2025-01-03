@@ -19,7 +19,6 @@ function RenderScoresPerCountry(allCountryScores) {
     return (
       <>
         <h2>High Scrores: {country.name}</h2>
-        <p key={crypto.randomUUID()}>{country.name}</p>
         <ul>{RenderScores(country)}</ul>
       </>
     );
