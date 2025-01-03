@@ -17,7 +17,7 @@ function RenderScores(country) {
   ));
 }
 
-function RenderScoresPerCountry(allCountryScores) {
+function HighScoreTable(allCountryScores) {
   const sortedCountriesByName = sortCountryScoresByName(allCountryScores);
   return sortedCountriesByName.map((country) => {
     return (
@@ -31,4 +31,4 @@ function RenderScoresPerCountry(allCountryScores) {
   });
 }
 
-export {RenderScoresPerCountry}
+export {HighScoreTable}
