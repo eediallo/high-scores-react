@@ -8,10 +8,8 @@ function RenderScores(country) {
   ));
 }
 
-
-
-function App() {
-  const countriesList = allCountryScores.map((country) => {
+function RenderScoresPerCountry(allCountryScores) {
+  return allCountryScores.map((country) => {
     return (
       <>
         <h2>High Scrores: {country.name}</h2>
@@ -20,11 +18,13 @@ function App() {
       </>
     );
   });
+}
 
+function App() {
   return (
     <>
       <h1>High Scores per country</h1>
-      <div>{countriesList}</div>
+      <div>{RenderScoresPerCountry(allCountryScores)}</div>
     </>
   );
 }
