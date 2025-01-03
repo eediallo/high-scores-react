@@ -1,4 +1,3 @@
-
 function sortScores(scores) {
   return scores.sort((a, b) => b.s - a.s);
 }
@@ -7,7 +6,7 @@ function sortCountryScoresByName(countries) {
   return countries.sort((a, b) => a.name.localeCompare(b.name));
 }
 
-function RenderScores(country) {
+function PlayersScore(country) {
   const sortedScores = sortScores(country.scores);
   return sortedScores.map((score) => (
     <li className="score" key={crypto.randomUUID()}>
@@ -24,11 +23,11 @@ function HighScoreTable(allCountryScores) {
       <>
         <div className="scores-container">
           <h2>High Scrores: {country.name}</h2>
-          <ul>{RenderScores(country)}</ul>
+          <ul>{PlayersScore(country)}</ul>
         </div>
       </>
     );
   });
 }
 
-export {HighScoreTable}
+export { HighScoreTable };
