@@ -2,13 +2,18 @@ import allCountryScores from "../data/scores.jsx";
 
 function App() {
   const countriesList = allCountryScores.map((country) => {
-    return <li key={crypto.randomUUID()}>{country.name}</li>;
+    return (
+      <>
+        <h2>High Scrores: {country.name}</h2>
+        <p key={crypto.randomUUID()}>{country.name}</p>;
+      </>
+    );
   });
 
   return (
     <>
       <h1>High Scores per country</h1>
-      {countriesList}
+      <div>{countriesList}</div>
     </>
   );
 }
