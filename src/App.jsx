@@ -10,7 +10,7 @@ function RenderScores(country) {
   return sortedScores.map((score) => (
     <li className="score" key={crypto.randomUUID()}>
       {" "}
-      {score.n} {score.s}
+      {score.n} <span className="high-score">{score.s}</span>
     </li>
   ));
 }
@@ -19,8 +19,10 @@ function RenderScoresPerCountry(allCountryScores) {
   return allCountryScores.map((country) => {
     return (
       <>
-        <h2>High Scrores: {country.name}</h2>
-        <ul className="scores">{RenderScores(country)}</ul>
+        <div className="scores-container">
+          <h2>High Scrores: {country.name}</h2>
+          <ul>{RenderScores(country)}</ul>
+        </div>
       </>
     );
   });
