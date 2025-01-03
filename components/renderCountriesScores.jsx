@@ -9,10 +9,14 @@ function sortCountryScoresByName(countries) {
 function PlayersScore(country) {
   const sortedScores = sortScores(country.scores);
   return sortedScores.map((score) => (
-    <li className="score" key={score.id}>
-      {" "}
-      {score.n} <span className="high-score">{score.s}</span>
-    </li>
+    <tbody className="score-table" key={score.id}>
+      <tr className="score">
+        <td>{score.n}</td>
+        <td>
+          <span className="high-score">{score.s}</span>
+        </td>
+      </tr>
+    </tbody>
   ));
 }
 
@@ -22,7 +26,7 @@ function HighScoreTable(allCountryScores) {
     return (
       <div className="scores-container" key={country.id}>
         <h2>High Scrores: {country.name}</h2>
-        <ul>{PlayersScore(country)}</ul>
+        <table>{PlayersScore(country)}</table>
       </div>
     );
   });
