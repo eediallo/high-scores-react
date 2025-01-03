@@ -11,7 +11,7 @@ function PlayersScore(country) {
   return sortedScores.map((score) => (
     <tbody key={score.id}>
       <tr className="score">
-        <td>{score.n}</td>
+        <td>{score.n.toUpperCase()}</td>
         <td>
           <span className="high-score">{score.s}</span>
         </td>
