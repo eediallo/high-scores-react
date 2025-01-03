@@ -37,7 +37,7 @@ function App() {
   return (
     <>
       <h1>High Scores per country</h1>
-      <div>{RenderScoresPerCountry(allCountryScores.sort())}</div>
+      <div>{RenderScoresPerCountry(allCountryScores)}</div>
     </>
   );
 }
