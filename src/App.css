@@ -46,3 +46,8 @@
   border: solid 2px black;
 }
 
+.scores-container {
+  border: solid 3px green;
+  margin-bottom: 20px;
+  padding: 10px;
+}
