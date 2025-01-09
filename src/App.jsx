@@ -7,8 +7,8 @@ function sortCountryScoresByName(countries) {
   return countries.sort((a, b) => a.name.localeCompare(b.name));
 }
 
-function sortScores(scores) {
-  return scores.sort((a, b) => b.s - a.s);
+function sortScores(scores, ascending = true) {
+  return scores.sort((a, b) => (ascending ? b.s - a.s : a.s - b.s));
 }
 
 function App() {
@@ -25,24 +25,24 @@ function App() {
     );
   }
 
+  function sortScoresAscending() {
+    setSortedScores(
+      sortCountryScoresByName(
+        allCountryScores.map((country) => ({
+          ...country,
+          scores: [...sortScores(country.scores, false)],
+        }))
+      )
+    );
+  }
+
   function sortScoresDescending() {
     setBtnTextCont("Sort Scores Descending");
     setSortedScores(
       sortCountryScoresByName(
         allCountryScores.map((country) => ({
           ...country,
-          scores: [...country.scores].sort((a, b) => b.s - a.s),
-        }))
-      )
-    );
-  }
-
-  function sortScoresAscending() {
-    setSortedScores(
-      sortCountryScoresByName(
-        allCountryScores.map((country) => ({
-          ...country,
-          scores: [...country.scores].sort((a, b) => a.s - b.s),
+          scores: [...sortScores(country.scores)],
         }))
       )
     );
