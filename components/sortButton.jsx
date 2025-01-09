@@ -2,18 +2,18 @@ import { useState } from "react";
 import allCountryScores from "../data/scores";
 import PropTypes from "prop-types";
 
-function SortCountryScoresByName(countries) {
+const SortCountryScoresByName = (countries) => {
   return countries.sort((a, b) => a.name.localeCompare(b.name));
-}
+};
 
-function SortScores(scores, ascending = true) {
+const SortScores = (scores, ascending = true) => {
   return scores.sort((a, b) => (ascending ? b.s - a.s : a.s - b.s));
-}
+};
 
 const SortButton = ({ setSortedScores }) => {
   let [btnTextContent, setBtnTextCont] = useState("Sort Scores Descending");
 
-  function sortScoresAscending() {
+  const sortScoresAscending = () => {
     setSortedScores(
       SortCountryScoresByName(
         allCountryScores.map((country) => ({
@@ -22,9 +22,9 @@ const SortButton = ({ setSortedScores }) => {
         }))
       )
     );
-  }
+  };
 
-  function sortScoresDescending() {
+  const sortScoresDescending = () => {
     setBtnTextCont("Sort Scores Descending");
     setSortedScores(
       SortCountryScoresByName(
@@ -34,16 +34,16 @@ const SortButton = ({ setSortedScores }) => {
         }))
       )
     );
-  }
+  };
 
-  function handlOnClick() {
+  const handlOnClick = () => {
     if (btnTextContent === "Sort Scores Descending") {
       setBtnTextCont("Sort Scores Ascending");
       sortScoresAscending();
     } else {
       sortScoresDescending();
     }
-  }
+  };
 
   return (
     <>
