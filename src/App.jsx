@@ -3,26 +3,47 @@ import { HighScoreTable } from "../components/renderCountriesScores.jsx";
 import "./App.css";
 import { useState } from "react";
 
+function sortCountryScoresByName(countries) {
+  return countries.sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function sortScores(scores) {
+  return scores.sort((a, b) => b.s - a.s);
+}
+
 function App() {
   const [btnTextContent, setBtnTextCont] = useState("Sort Scores Descending");
-  const [sortedScores, setSortedScores] = useState(allCountryScores);
+
+  // ensure ascending sort by default
+  const [sortedScores, setSortedScores] = useState(
+    sortCountryScoresByName(
+      allCountryScores.map((country) => ({
+        ...country,
+        scores: sortScores(country.scores),
+      }))
+    )
+  );
 
   function handlOnClick() {
     if (btnTextContent === "Sort Scores Descending") {
       setBtnTextCont("Sort Scores Ascending");
       setSortedScores(
-        allCountryScores.map((country) => ({
-          ...country,
-          scores: [...country.scores].sort((a, b) => b.s - a.s),
-        }))
+        sortCountryScoresByName(
+          allCountryScores.map((country) => ({
+            ...country,
+            scores: [...country.scores].sort((a, b) => a.s - b.s),
+          }))
+        )
       );
     } else {
       setBtnTextCont("Sort Scores Descending");
       setSortedScores(
-        allCountryScores.map((country) => ({
-          ...country,
-          scores: [...country.scores].sort((a, b) => a.s - b.s),
-        }))
+        sortCountryScoresByName(
+          allCountryScores.map((country) => ({
+            ...country,
+            scores: [...country.scores].sort((a, b) => b.s - a.s),
+          }))
+        )
       );
     }
   }
