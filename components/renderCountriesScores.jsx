@@ -20,9 +20,8 @@ function PlayersScore(country) {
   ));
 }
 
-function HighScoreTable(allCountryScores) {
-  const sortedCountriesByName = sortCountryScoresByName(allCountryScores);
-  return sortedCountriesByName.map((country) => {
+function HighScoreTable({ allCountryScores }) {
+  return sortCountryScoresByName(allCountryScores).map((country) => {
     return (
       <div className="scores-container" key={country.id}>
         <h2>

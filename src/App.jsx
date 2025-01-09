@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <h1>High Scores per Country</h1>
-      <div>{HighScoreTable(allCountryScores)}</div>
+      <HighScoreTable allCountryScores={allCountryScores} />
     </>
   );
 }
