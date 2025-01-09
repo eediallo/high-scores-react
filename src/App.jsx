@@ -8,16 +8,17 @@ import {
   SortScores,
 } from "../components/sortButton.jsx";
 
-function App() {
+const App = () => {
   const [sortedScores, setSortedScores] = useState(getSortedCountryScores());
-  const getSortedCountryScores = () => {
+
+  function getSortedCountryScores() {
     return SortCountryScoresByName(
       allCountryScores.map((country) => ({
         ...country,
         scores: SortScores(country.scores),
       }))
     );
-  };
+  }
 
   return (
     <>
@@ -26,6 +27,6 @@ function App() {
       <HighScoreTable allCountryScores={sortedScores} />
     </>
   );
-}
+};
 
 export default App;
