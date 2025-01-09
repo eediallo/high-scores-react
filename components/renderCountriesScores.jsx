@@ -1,5 +1,4 @@
-
-function PlayersScore(country) {
+const PlayersScore = (country) => {
   const sortedScores = country.scores;
   return sortedScores.map((score) => (
     <tbody key={score.id}>
@@ -11,9 +10,9 @@ function PlayersScore(country) {
       </tr>
     </tbody>
   ));
-}
+};
 
-function HighScoreTable({ allCountryScores }) {
+const HighScoreTable = ({ allCountryScores }) => {
   return allCountryScores.map((country) => {
     return (
       <div className="scores-container" key={country.id}>
@@ -24,6 +23,6 @@ function HighScoreTable({ allCountryScores }) {
       </div>
     );
   });
-}
+};
 
 export { HighScoreTable };
