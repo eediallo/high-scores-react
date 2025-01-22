@@ -15,5 +15,5 @@ export default function PlayerScores({ n, s }) {
 
 PlayerScores.propTypes = {
   n: PropTypes.string.isRequired,
-  s: PropTypes.number.isRequired,
+  s: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
