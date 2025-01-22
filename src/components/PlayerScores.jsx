@@ -1,14 +1,15 @@
 import PropTypes from "prop-types";
+import Section from "./Section";
 
 export default function PlayerScores({ n, s }) {
   return (
     <tbody>
-      <tr className="score">
+      <Section className="score" SectionContainer="tr">
         <td>{n.toUpperCase()}</td>
         <td>
           <span className="high-score">{s}</span>
         </td>
-      </tr>
+      </Section>
     </tbody>
   );
 }
