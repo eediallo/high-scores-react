@@ -1,5 +1,5 @@
 import PlayerCountry from "../PlayerCountry";
-import PlayersScores from "../PlayersScores";
+import PlayersScores from "../PlayersScores/PlayersScores";
 import PropTypes from "prop-types";
 import Section from "../Section";
 import "./HighScoreTable.css";

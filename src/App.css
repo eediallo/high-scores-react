@@ -15,34 +15,6 @@ body{
 }
 
 
-.score-table {
-  width: 100%;
-  border-collapse: collapse; 
-  margin: 25px 0; 
-  font-size: 30px; 
-  font-family: "knight-warrior-font", Arial, sans-serif; 
-  text-align: left; 
-}
-
-.score-table th,
-.score-table td {
-  font-family: "knight-warrior-font", Arial, sans-serif;
-}
-
-.score-table tbody td {
-  padding: 12px; 
-  border: 1px solid #dddddd; 
-  text-align: center;
-}
-
-.score-table tbody tr:nth-child(even) {
-  background-color: #f3f3f3; 
-}
-
-.score-table tbody tr:hover {
-  background-color: #f1f1f1; 
-}
-
 .scores-container h2 {
   font-family: "knight-warrior-font", Arial, sans-serif;
   font-size: 35px;
