@@ -2,10 +2,10 @@ import PlayerCountry from "./PlayerCountry";
 import PlayersScores from "./PlayersScores";
 import PropTypes from "prop-types";
 
-export default function HighScoreTable({ allCountryScores }) {
+export default function HighScoreTable({ countries }) {
   return (
     <>
-      {allCountryScores.map((country) => (
+      {countries.map((country) => (
         <div className="scores-container" key={country.id}>
           <PlayerCountry id={country.id} {...country} />
           <PlayersScores country={country} />
@@ -16,5 +16,5 @@ export default function HighScoreTable({ allCountryScores }) {
 }
 
 HighScoreTable.propTypes = {
-  allCountryScores: PropTypes.array.isRequired,
+  countries: PropTypes.array.isRequired,
 };
