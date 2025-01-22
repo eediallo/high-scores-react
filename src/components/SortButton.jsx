@@ -1,6 +1,7 @@
 import { useState } from "react";
 import allCountryScores from "../../data/scores";
 import PropTypes from "prop-types";
+import Section from "./Section";
 
 function SortCountryScoresByName(countries) {
   return countries.sort((a, b) => a.name.localeCompare(b.name));
@@ -47,9 +48,13 @@ function SortButton({ setSortedCountryScores }) {
 
   return (
     <>
-      <button className="sort-btn" onClick={handleClick}>
+      <Section
+        className="sort-btn"
+        onClick={handleClick}
+        SectionContainer="button"
+      >
         {btnTextContent}
-      </button>
+      </Section>
     </>
   );
 }
