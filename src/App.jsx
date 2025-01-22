@@ -1,5 +1,5 @@
 import allCountryScores from "../data/scores.js";
-import HighScoreTable from "./components/HighScoreTable.jsx";
+import HighScoreTable from "./components/HighScoreTable/HighScoreTable.jsx";
 import "./App.css";
 import { useState } from "react";
 import {

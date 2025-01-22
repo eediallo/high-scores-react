@@ -1,7 +1,8 @@
-import PlayerCountry from "./PlayerCountry";
-import PlayersScores from "./PlayersScores";
+import PlayerCountry from "../PlayerCountry";
+import PlayersScores from "../PlayersScores";
 import PropTypes from "prop-types";
-import Section from "./Section";
+import Section from "../Section";
+import "./HighScoreTable.css";
 
 export default function HighScoreTable({ countries }) {
   return (
