@@ -1,13 +1,14 @@
 import PlayerScores from "./PlayerScores";
 import PropTypes from "prop-types";
+import Section from "./Section";
 
 export default function PlayersScores({ country }) {
   return (
-    <table className="score-table">
+    <Section className="score-table" SectionContainer="table">
       {country.scores.map((score) => (
         <PlayerScores key={score.id} {...score} />
       ))}
-    </table>
+    </Section>
   );
 }
 
