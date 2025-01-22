@@ -10,10 +10,6 @@ import {
 import Header from "./components/Header.jsx";
 
 function App() {
-  const [sortedCountryScores, setSortedCountryScores] = useState(
-    getSortedCountryScores()
-  );
-
   function getSortedCountryScores() {
     return SortCountryScoresByName(
       allCountryScores.map((country) => ({
@@ -22,6 +18,10 @@ function App() {
       }))
     );
   }
+
+  const [sortedCountryScores, setSortedCountryScores] = useState(
+    getSortedCountryScores()
+  );
 
   return (
     <>
