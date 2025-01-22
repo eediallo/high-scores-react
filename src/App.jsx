@@ -1,15 +1,18 @@
-import allCountryScores from "../data/scores.jsx";
-import { HighScoreTable } from "../components/renderCountriesScores.jsx";
+import allCountryScores from "../data/scores.js";
+import HighScoreTable from "./components/HighScoreTable.jsx";
 import "./App.css";
 import { useState } from "react";
 import {
   SortButton,
   SortCountryScoresByName,
   SortScores,
-} from "../components/sortButton.jsx";
+} from "./components/SortButton.jsx";
+import Header from "./components/Header.jsx";
 
-const App = () => {
-  const [sortedScores, setSortedScores] = useState(getSortedCountryScores());
+function App() {
+  const [sortedCountryScores, setSortedCountryScores] = useState(
+    getSortedCountryScores()
+  );
 
   function getSortedCountryScores() {
     return SortCountryScoresByName(
@@ -22,11 +25,11 @@ const App = () => {
 
   return (
     <>
-      <h1>High Scores per Country</h1>
-      <SortButton setSortedScores={setSortedScores} />
-      <HighScoreTable allCountryScores={sortedScores} />
+      <Header />
+      <SortButton setSortedCountryScores={setSortedCountryScores} />
+      <HighScoreTable countries={sortedCountryScores} />
     </>
   );
-};
+}
 
 export default App;
