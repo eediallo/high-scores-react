@@ -10,11 +10,11 @@ const SortScores = (scores, ascending = true) => {
   return scores.sort((a, b) => (ascending ? b.s - a.s : a.s - b.s));
 };
 
-const SortButton = ({ setSortedScores }) => {
+const SortButton = ({ setSortedCountryScores }) => {
   let [btnTextContent, setBtnTextCont] = useState("Sort Scores Descending");
 
   const sortScoresAscending = () => {
-    setSortedScores(
+    setSortedCountryScores(
       SortCountryScoresByName(
         allCountryScores.map((country) => ({
           ...country,
@@ -26,7 +26,7 @@ const SortButton = ({ setSortedScores }) => {
 
   const sortScoresDescending = () => {
     setBtnTextCont("Sort Scores Descending");
-    setSortedScores(
+    setSortedCountryScores(
       SortCountryScoresByName(
         allCountryScores.map((country) => ({
           ...country,
@@ -55,7 +55,7 @@ const SortButton = ({ setSortedScores }) => {
 };
 
 SortButton.propTypes = {
-  setSortedScores: PropTypes.func.isRequired,
+  setSortedCountryScores: PropTypes.func.isRequired,
 };
 
 export { SortButton, SortScores, SortCountryScoresByName };
