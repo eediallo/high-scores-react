@@ -1,5 +1,5 @@
 import { useState } from "react";
-import allCountryScores from "../data/scores";
+import allCountryScores from "../../data/scores";
 import PropTypes from "prop-types";
 
 const SortCountryScoresByName = (countries) => {
