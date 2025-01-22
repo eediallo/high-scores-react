@@ -36,7 +36,7 @@ const SortButton = ({ setSortedScores }) => {
     );
   };
 
-  const handlOnClick = () => {
+  const handleClick = () => {
     if (btnTextContent === "Sort Scores Descending") {
       setBtnTextCont("Sort Scores Ascending");
       sortScoresAscending();
@@ -47,7 +47,7 @@ const SortButton = ({ setSortedScores }) => {
 
   return (
     <>
-      <button className="sort-btn" onClick={handlOnClick}>
+      <button className="sort-btn" onClick={handleClick}>
         {btnTextContent}
       </button>
     </>
