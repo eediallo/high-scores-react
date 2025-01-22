@@ -1,0 +1,10 @@
+.score {
+  list-style: none;
+  border: solid 2px black;
+  align-items: center;
+}
+
+.high-score {
+  color: red;
+  margin-left: 100px;
+}

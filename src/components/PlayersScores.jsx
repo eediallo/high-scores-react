@@ -1,4 +1,4 @@
-import PlayerScores from "./PlayerScores";
+import PlayerScores from "./PlayerScores/PlayerScores";
 import PropTypes from "prop-types";
 import Section from "./Section";
 
