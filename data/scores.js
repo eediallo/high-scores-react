@@ -1,4 +1,4 @@
-let allCountryScores = [
+const allCountryScores = [
   {
     id: 0,
     name: "Ethiopia",
