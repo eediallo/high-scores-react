@@ -1,15 +1,20 @@
 import PlayerCountry from "./PlayerCountry";
 import PlayersScores from "./PlayersScores";
 import PropTypes from "prop-types";
+import Section from "./Section";
 
 export default function HighScoreTable({ countries }) {
   return (
     <>
       {countries.map((country) => (
-        <div className="scores-container" key={country.id}>
+        <Section
+          className="scores-container"
+          key={country.id}
+          SectionContainer="section"
+        >
           <PlayerCountry id={country.id} {...country} />
           <PlayersScores country={country} />
-        </div>
+        </Section>
       ))}
     </>
   );
